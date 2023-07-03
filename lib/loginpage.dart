@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mayflutter/listview.dart';
+import 'package:mayflutter/signup.dart';
 
 import 'home.dart';
 
@@ -101,13 +103,16 @@ class _loginpageState extends State<loginpage> {
                 final valid = fromkey.currentState!.validate();
                 if (valid) {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => HomePage()));
+                      MaterialPageRoute(builder: (context) => listpage()));
                 } else {
                   return null;
                 }
               }, child: Text("login")),
             ),
-            TextButton(onPressed: (){}, child: Text("not a user ? create a new Account"))
+            TextButton(onPressed: (){
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => Signupp()));
+            }, child: Text("not a user ? create a new Account"))
 
           ],
         ),
